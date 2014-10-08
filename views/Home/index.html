@@ -1,13 +1,16 @@
-<h3>Rechercher un Hashtag :</h3>
-<form action="/tags" method="post">
-	<input type="text" name="tags">
-	<input type="hidden" value="<%= userId %>" />
-	<button id="SubmitBtn" type="submit">Rechercher</button>
-	<ul id="tweets"></ul>
-</form>
+<div class="content">
+	<h1>Rechercher un Hashtag</h1>
+	<form action="/tags" method="post">
+		<input type="text" placeholder="Entrez un Hashtag" name="tags">
+		<input type="hidden" value="<%= userId %>" />
+		<button id="SubmitBtn" type="submit">GO !</button>
+	</form>
 
-<ul id="tags">
-	<% for (var i = 0; i < tags.length; i++){ %>
-		<li class="tag"><%= tags[i] %></li>
-	<% } %>
-</ul>
+	<ul id="tags">
+		<% for (var i = 0; i < tags.length; i++){ %>
+			<li class="tag" onclick="remove(userId.tag)"><%= tags[i] %></li>
+		<% } %>
+	</ul>
+
+	<ul id="tweets"></ul>
+</div>
